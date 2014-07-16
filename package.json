@@ -1,0 +1,16 @@
+{
+  "name": "Amarakosha",
+  "version": "0.0.1",
+  "description": "Shloka DB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manjesh V",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "sequelize": "~1.7.9",
+    "lodash": "~2.4.1",
+    "mysql": "~2.4.0"
+  }
+}
