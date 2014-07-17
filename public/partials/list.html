@@ -1,0 +1,24 @@
+<p ><a class="btn btn-success" href="#/create" > Create </a></p>
+<ul class="todo-list">
+	<li ng-repeat="todo in todos"><a href="#/details/{{todo.id}}">{{ todo.text }} </a><a ng-click="deleteTodo(todo.id,todo.text)">Delete </a></li>
+</ul>
+<style>
+.todo-list {
+	text-align:center;
+	font-size:20px;
+}
+
+.todo-list li {
+	text-decoration: none;
+	list-style: none;
+}
+.todo-list li:hover {
+
+	font-size: 30px;
+	transition: all 0.3s;
+
+}
+.todo-list li a{
+	text-decoration: none;
+}
+</style>

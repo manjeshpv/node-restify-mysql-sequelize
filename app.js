@@ -15,6 +15,7 @@ var routes =require('./routes');
 server.use(restify.bodyParser());
 
 // Routes to Function Assaignment
+server.get('/api/todo/:id', routes.todo.getOne);
 server.get('/api/todos', routes.todo.get);
 server.post('/api/todos', routes.todo.post);
 server.del('/api/todos/:id', routes.todo.del);

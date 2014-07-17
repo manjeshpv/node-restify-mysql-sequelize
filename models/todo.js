@@ -1,6 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
 	var Todo = sequelize.define('Todo', {
-		text: DataTypes.STRING
+		text: DataTypes.STRING,
+		details: DataTypes.STRING
 	}
 	);
 	

@@ -11,9 +11,26 @@ exports.get = function(req, res, next){
    
 };
 
+// GET: /api/todo
+exports.getOne = function(req, res, next){
+   db.Todo.find({where: {id:req.params.id}}).success(function(todos){
+		console.log(req.params.id);
+		res.send(todos);
+		return next();
+   });
+   
+};
+
 // POST: /api/todos
-exports.post = function(req, res, next){	
-	db.Todo.create({text:req.body.text}).success(function(todo){
+exports.post = function(req, res, next){
+	var sql;
+	if(req.body.text != ""){
+		sql = {text:req.body.text};
+	} 
+	 if (req.body.details != ""){
+		sql = {text:req.body.text,details:req.body.details};
+	}	
+	db.Todo.create(sql).success(function(todo){
 		db.Todo.findAll().success(function(todos){
 			res.send(todos);
 			return next();
